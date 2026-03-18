@@ -15,12 +15,11 @@ const emojiFeedback = document.getElementById("emoji-feedback");
 const endPage = document.getElementById("end-page");
 const stopGameBtn = document.getElementById("stop-game");
 
-// Pertanyaan
 const questions = [
     { q: "Siapa nama pet TikTok kita?", a: "SHIKA" },
-    { q: "Apa makanan favorit kamu?", a: "SUSHI" },
+    { q: "Makanan favorit kamu?", a: "SUSHI" },
     { q: "Warna favorit kamu?", a: "KUNING" },
-    { q: "Siapa manusia terlucu segalaksi bimasakti?", a: "NANA" },
+    { q: "Baju kesukaanmu?", a: "KEMEJA" },
     { q: "Siapa penguasa Solo?", a: "JOKOWI" }
 ];
 
@@ -65,7 +64,7 @@ submitBtn.addEventListener("click", ()=>{
     const answer=answerInput.value.toUpperCase();
     if(answer===questions[currentQuestion].a){
         feedback.textContent="xixi selamat yeaaa😎";
-        emojiFeedback.textContent="🤩";
+        emojiFeedback.textContent="😊";
         currentQuestion++;
         if(currentQuestion<questions.length){
             setTimeout(loadQuestion,1000);
@@ -102,6 +101,10 @@ function launchConfetti(){
 stopGameBtn.addEventListener("click", ()=>{
     endPage.classList.add("hidden");
     readyPage.classList.remove("hidden");
+    currentQuestion=0;
+    wishInput.value="";
+    wishFeedback.textContent="";
+});    readyPage.classList.remove("hidden");
     currentQuestion=0;
     wishInput.value="";
     wishFeedback.textContent="";
