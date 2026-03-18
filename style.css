@@ -21,8 +21,5 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-}
-
-#end-page button {
     background-color: #ffeb3b; /* cheerful yellow */
 }
