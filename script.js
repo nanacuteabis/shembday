@@ -1,3 +1,5 @@
+console.log("script.js loaded!"); 
+console.log("startBtn:", startBtn);
 const startBtn = document.getElementById("start-btn");
 const readyPage = document.getElementById("ready-page");
 const warningPage = document.getElementById("warning-page");
