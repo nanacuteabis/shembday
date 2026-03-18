@@ -6,17 +6,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Halaman awal -->
     <div id="welcome-page" class="page">
         <h1>Welcome to the Game Shem!</h1>
         <button id="start-btn">Mulai</button>
     </div>
 
+    <!-- Halaman peringatan -->
     <div id="warning-page" class="page hidden">
         <h2>⚠ PERINGATAN ⚠</h2>
         <p>*JAWABAN SEMUA HARUS UPPERCASE</p>
         <button id="continue-btn">Lanjut ke Game</button>
     </div>
 
+    <!-- Halaman game -->
     <div id="game-page" class="page hidden">
         <h2 id="question">Pertanyaan akan muncul di sini</h2>
         <input type="text" id="answer-input" placeholder="Tulis jawabanmu...">
@@ -24,8 +27,27 @@
         <p id="feedback"></p>
     </div>
 
+    <!-- Halaman ucapan akhir -->
     <div id="end-page" class="page hidden">
-        <h2>Game Selesai!</h2>
-        <p>Pilih opsi:</p>
-        <button id="continue-game">Lanjut 😁</button>
-        <button id="
+        <h2>🎉 Boom! Happy Birthday Star of the Day!!! 💥</h2>
+        <p>
+            Semoga hidup kamu selalu happy,<br>
+            selalu dikelilingi orang-orang baik,<br>
+            dan dipenuhi kesenangan & ketenangan ya.<br><br>
+            
+            Semoga di ulang tahun kali ini<br>
+            kamu lebih bahagia lagi, lebih chill, lebih fun,<br>
+            dan semua hal yang bikin kamu tertawa terus datang ke hidup kamu✨<br><br>
+            
+            May this year be full of laughter, love,<br>
+            dan semua hal yang bikin kamu merasa at peace & joyful 💛<br><br>
+            
+            Enjoy your day, kak!!!
+        </p>
+        <button id="stop-game">Kembali ke Halaman Awal 😞</button>
+    </div>
+
+    <!-- Hubungkan JS -->
+    <script src="script.js"></script>
+</body>
+</html>
