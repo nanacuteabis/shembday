@@ -1,5 +1,8 @@
 const startBtn = document.getElementById("start-btn");
 const readyPage = document.getElementById("ready-page");
+const warningPage = document.getElementById("warning-page");
+const warningContinue = document.getElementById("warning-continue");
+
 const wishPage = document.getElementById("wish-page");
 const wishInput = document.getElementById("wish-input");
 const wishBtn = document.getElementById("wish-btn");
@@ -20,22 +23,27 @@ const questions = [
     { q: "Siapa nama pet TikTok kita?", a: "SHIKA" },
     { q: "Makanan favorit kamu?", a: "SUSHI" },
     { q: "Warna favorit kamu?", a: "KUNING" },
-    { q: "Baju kesukaanmu?", a: "KEMEJA" },
-    { q: "Siapa penguasa Solo?", a: "JOKOWI" }
+    { q: "Minuman favorit yang ga bisa kamu tinggal?", a: "KOPI" },
+    { q: "Siapa manusia paling lucu se galaksi bimasakti?", a: "NANA" }
 ];
 
 let currentQuestion = 0;
 
-// Mulai game → ke halaman Make a Wish
+// Flow: Ready -> Warning -> Make a Wish
 startBtn.addEventListener("click", () => {
     readyPage.classList.add("hidden");
+    warningPage.classList.remove("hidden");
+});
+
+warningContinue.addEventListener("click", () => {
+    warningPage.classList.add("hidden");
     wishPage.classList.remove("hidden");
 });
 
 // Tiup lilin
 wishBtn.addEventListener("click", () => {
     if(wishInput.value.toUpperCase() === "PUFF"){
-        wishFeedback.textContent = "🎉 Lilin padam! Yuk mulai game!";
+        wishFeedback.textContent = "🎉 Lilin padam! Yuk main game!";
         setTimeout(() => {
             wishPage.classList.add("hidden");
             gamePage.classList.remove("hidden");
@@ -59,7 +67,7 @@ submitBtn.addEventListener("click", () => {
     const answer = answerInput.value.toUpperCase();
     if(answer === questions[currentQuestion].a){
         feedback.textContent = "xixi selamat yeaaa😎";
-        emojiFeedback.textContent = "😊"; // animasi senyum
+        emojiFeedback.textContent = "🤩"; // animasi senyum
         currentQuestion++;
         if(currentQuestion < questions.length){
             setTimeout(loadQuestion, 1000);
@@ -102,6 +110,9 @@ stopGameBtn.addEventListener("click", () => {
     endPage.classList.add("hidden");
     readyPage.classList.remove("hidden");
     currentQuestion = 0;
+    wishInput.value = "";
+    wishFeedback.textContent = "";
+});    currentQuestion = 0;
     wishInput.value = "";
     wishFeedback.textContent = "";
 });
