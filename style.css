@@ -1,4 +1,3 @@
-/* BODY */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -7,9 +6,8 @@ body {
     background-color: #f8f9fa;
 }
 
-/* HALAMAN */
 .page {
-    min-height: 100vh; /* biar penuh layar HP */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,31 +17,16 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* HALAMAN BERBEDA WARNA */
-#welcome-page { background-color: #ffe082; }    /* cheerful kuning */
-#warning-page { background-color: #ffcc80; }    /* peringatan */
-#game-page { background-color: #fff59d; }       /* game */
-#end-page { background-color: #ffd54f; }        /* ucapan akhir */
+#welcome-page, #ready-page { background-color: #ffe082; }
+#wish-page { background-color: #fff59d; }
+#game-page { background-color: #fff176; }
+#end-page { background-color: #ffd54f; }
 
-/* HIDDEN CLASS */
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
-/* JUDUL */
-h1, h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
+h1, h2 { font-size: 2em; margin-bottom: 20px; }
+p { font-size: 1.1em; line-height: 1.5em; max-width: 600px; }
 
-/* PARAGRAF */
-p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-    max-width: 600px;
-}
-
-/* INPUT BOX */
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
@@ -54,7 +37,6 @@ input[type="text"] {
     border: 1px solid #ccc;
 }
 
-/* TOMBOL */
 button {
     padding: 15px 25px;
     font-size: 18px;
@@ -62,25 +44,42 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 8px;
-    background-color: #ffeb3b; /* cheerful yellow */
+    background-color: #ffeb3b;
     transition: transform 0.2s, background-color 0.2s;
 }
 
-/* TOMBOL HOVER EFFECT */
 button:hover {
     transform: scale(1.05);
     background-color: #fdd835;
 }
 
-/* FEEDBACK */
-#feedback {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
+/* Emoji feedback */
+#emoji-feedback { font-size: 3em; margin-top: 10px; }
+
+/* Lilin animasi */
+.flame {
+    display: inline-block;
+    animation: flicker 0.5s infinite alternate;
+}
+@keyframes flicker {
+    0% { transform: translateY(0px); opacity:1; }
+    50% { transform: translateY(-3px); opacity:0.8; }
+    100% { transform: translateY(0px); opacity:1; }
 }
 
-/* RESPONSIVE HP */
+/* Balon animasi */
+#balloons span {
+    display: inline-block;
+    font-size: 2em;
+    animation: floatUp 4s infinite ease-in;
+    margin: 0 5px;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
 @media only screen and (max-width: 480px) {
     h1, h2 { font-size: 1.5em; }
     p { font-size: 1em; }
