@@ -17,7 +17,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#welcome-page, #ready-page { background-color: #ffe082; }
+#ready-page { background-color: #ffe082; }
 #wish-page { background-color: #fff59d; }
 #game-page { background-color: #fff176; }
 #end-page { background-color: #ffd54f; }
@@ -78,6 +78,23 @@ button:hover {
     0% { transform: translateY(0); }
     50% { transform: translateY(-50px); }
     100% { transform: translateY(0); }
+}
+
+/* Confetti mini */
+.confetti {
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    z-index: 9999;
+    border-radius: 50%;
+    animation: fall 3s linear forwards;
+}
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(50vh) rotate(180deg); }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
 
 @media only screen and (max-width: 480px) {
