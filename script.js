@@ -1,14 +1,12 @@
 const startBtn = document.getElementById("start-btn");
 const continueBtn = document.getElementById("continue-btn");
 const submitBtn = document.getElementById("submit-answer");
-const continueGameBtn = document.getElementById("continue-game");
 const stopGameBtn = document.getElementById("stop-game");
 
 const welcomePage = document.getElementById("welcome-page");
 const warningPage = document.getElementById("warning-page");
 const gamePage = document.getElementById("game-page");
 const endPage = document.getElementById("end-page");
-const postGame = document.getElementById("post-game");
 
 const questionEl = document.getElementById("question");
 const answerInput = document.getElementById("answer-input");
@@ -54,6 +52,7 @@ submitBtn.addEventListener("click", () => {
         if(currentQuestion < questions.length){
             setTimeout(loadQuestion, 1000);
         } else {
+            // semua pertanyaan selesai → tampil halaman ucapan
             setTimeout(() => {
                 gamePage.classList.add("hidden");
                 endPage.classList.remove("hidden");
@@ -64,13 +63,7 @@ submitBtn.addEventListener("click", () => {
     }
 });
 
-// Opsi lanjut
-continueGameBtn.addEventListener("click", () => {
-    endPage.classList.add("hidden");
-    postGame.classList.remove("hidden");
-});
-
-// Opsi berhenti
+// Tombol kembali ke halaman awal
 stopGameBtn.addEventListener("click", () => {
     endPage.classList.add("hidden");
     welcomePage.classList.remove("hidden");
