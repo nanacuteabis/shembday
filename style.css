@@ -26,8 +26,3 @@ button {
 #end-page button {
     background-color: #ffeb3b; /* cheerful yellow */
 }
-.responsive-img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
